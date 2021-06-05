@@ -1,0 +1,50 @@
+<html>
+<head>
+<title> soniJiKiJwellery </title>
+<style>
+.container{
+	
+	background-color:#ccc7c7;
+	width:28%;
+	height:250px;
+	border:1px solid;
+	margin:auto;
+	margin-top:100px;
+}
+
+
+form{
+text-align:center;
+margin-top:10px;
+}
+h1{
+text-align:center;
+}
+input[type]{
+width:90%;
+height:34px;
+boder:0;
+
+}
+.btn-login{
+    width: 100px;
+    height: 32px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Login</h1>
+    <form action='/login' method="post">
+      <% if(messages.error) { %>
+            <span class="text-red-500 text-sm"><%= messages.error %></span>
+      <% } %>
+      <input type="text" name="email" placeholder="email" class="loginTextPassword" required="required" /><br><br>
+        <input type="password" name="password" placeholder="Password" class="loginTextPassword" required="required" /><br><br>
+        <button type="submit" class='btn-login'>LogIn</button>
+    </form>
+</div>
+
+</body>
+</html>

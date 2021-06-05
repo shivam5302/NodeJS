@@ -1,0 +1,61 @@
+
+
+<%- include('./_partials/header') -%>
+
+<% if(session.cart){ %>
+<div class="container text-center mt-4">
+	
+    <div class="d-flex justify-content-start p-3 bottom"><img class="cartImg" src="images/shopping-cart.svg" alt="product Image"><h5 class="cartHeading">Order Summary</h5>
+	</div>
+	<div class="bottom">
+
+	<% for(let product of Object.values(session.cart.items)) { %>
+
+	<div class="row products-row">
+		<div class="col d-flex justify-content-between"><img class="cartProductImg" src="images/<%= product.item.productImage %>.png" alt="product Image"><h6><%= product.item.productName %></h6></div>
+		<div class="col"><input type="text" class="quantity text-center" name="" value="<%= product.qty %>"></div>
+		<div class="col"><h6>₹<%= product.item.productPrice %></h6></div>
+		<div class="col remove"><b>X</b></div>
+	</div>
+
+
+	<% } %>
+
+</div>
+
+	
+		
+	
+
+
+
+	 <div class="p-3 text-end">
+		<h5>Total Amount:₹200</h5>
+		<% if(user){ %>
+		<form action = '/order' method = "post">
+		<input type="text" name="address" placeholder="Address" > <br><br>
+		<input type="text" name="mobile" placeholder="Mobile No." ><br><br>
+		
+		<button type="submit" class="btn btn-success">PlaceOrder</button>
+		</form>
+		<%} else{%>
+		<a href="/login"><button type="button" class="btn btn-warning">TO Order LogIn</button></a>
+		<% } %>
+		</form>
+	</div> 
+	
+	
+	
+	</div>
+<%}else{%>
+    <div class="empty-cart py-16">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold mb-2">Cart Empty 😕</h1>
+            <p class="text-gray-500 text-lg mb-12">You probably haven't ordered a pizza yet. <br>
+                To order a pizza, go to the main page.</p>
+            <img class="w-2/5 mx-auto" src="images/empty-cart.png" alt="empty-cart">
+            <a href="/" class="inline-block px-6 py-2 rounded-full btn-primary text-white font-bold mt-12">Go back</a>
+        </div>
+    </div>
+    <% } %>
+<%- include('./_partials/footer') -%>	

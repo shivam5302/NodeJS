@@ -1,0 +1,227 @@
+<%- include('./_partials/header') -%>
+
+
+<!-- carousal -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" >
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/frontPage.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/frontPage.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/frontPage.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block ">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Products -->
+
+<div class="AllProducts" >
+	<h2 style="text-align:center; margin-top:10px;">All Products Categories</h2>
+		<div class="container">
+			<h3 class="CategoryHeading">Head&Hair</h3>
+			<ul class="products" >
+				
+				<% products.forEach(product=>{ %>
+					<%if(product.productCategoryID==1){%>
+					<li id="list-products">
+					<div class="product">
+						<img class="product-image" src="images/<%=product.productImage%>.png" alt="product Image">
+						<div class="product-name">
+							<a href="product/<%= product.productID %>"><h3><%= product.productName %></h3></a></div>
+						
+						<div class="product-price">Price :<%= product.productPrice %> </div>
+						<div class="product-btn"><button class="product-btn" onclick="updateCart(<%=JSON.stringify(product)%>)"><strong>Add To Cart</Strong></button></div>
+						
+					</div>
+				</li>
+
+				<% }}) %>
+
+				
+				</ul>
+				</div>
+				
+				<div class="container">
+				<h3 class="CategoryHeading">Neck</h3>
+				<ul class="products">
+
+				<% products.forEach(product=>{ %>
+					<%if(product.productCategoryID==2){%>
+					<li id="list-products">
+					<div class="product">
+						<img class="product-image" src="images/<%=product.productImage%>.png" alt="product Image">
+						<div class="product-name">
+							<a href="product/<%= product.productID %>"><h3><%= product.productName %></h3></a></div>
+						
+						<div class="product-price">Price :<%= product.productPrice %> </div>
+						<div class="product-btn"><button class="product-btn" onclick="updateCart(<%=JSON.stringify(product)%>)"><strong>Add To Cart</Strong></button></div>
+						
+					</div>
+				</li>
+
+				<% }}) %>
+
+					
+				</ul>
+			</div>
+
+
+			<div class="container">
+				<h3 class="CategoryHeading">Arms</h3>
+				<ul class="products">
+
+				<% products.forEach(product=>{ %>
+					<%if(product.productCategoryID==3){%>
+					<li id="list-products">
+					<div class="product">
+						<img class="product-image" src="images/<%=product.productImage%>.png" alt="product Image">
+						<div class="product-name">
+							<a href="product/<%= product.productID %>"><h3><%= product.productName %></h3></a></div>
+						
+						<div class="product-price">Price :<%= product.productPrice %> </div>
+						<div class="product-btn"><button class="product-btn" onclick="updateCart(<%=JSON.stringify(product)%>)"><strong>Add To Cart</Strong></button></div>
+						
+					</div>
+				</li>
+
+				<% }}) %>
+
+				
+			</ul>
+		</div>
+
+			<div class="container">
+				<h3 class="CategoryHeading">Hands</h3>
+				<ul class="products">
+
+				<% products.forEach(product=>{ %>
+					<%if(product.productCategoryID==4){%>
+					<li id="list-products">
+					<div class="product">
+						<img class="product-image" src="images/<%=product.productImage%>.png" alt="product Image">
+						<div class="product-name">
+							<a href="product/<%= product.productID %>"><h3><%= product.productName %></h3></a></div>
+						
+						<div class="product-price">Price :<%= product.productPrice %> </div>
+						<div class="product-btn"><button class="product-btn" onclick="updateCart(<%=JSON.stringify(product)%>)"><strong>Add To Cart</Strong></button></div>
+						
+					</div>
+				</li>
+
+				<% }}) %>
+
+				
+			</ul>
+		</div>
+
+			<div class="container">
+				<h3 class="CategoryHeading">Body</h3>
+				<ul class="products">
+
+				<% products.forEach(product=>{ %>
+					<%if(product.productCategoryID==5){%>
+					<li id="list-products">
+					<div class="product">
+						<img class="product-image" src="images/<%=product.productImage%>.png" alt="product Image">
+						<div class="product-name">
+							<a href="product/<%= product.productID %>"><h3><%= product.productName %></h3></a></div>
+						
+						<div class="product-price">Price :<%= product.productPrice %> </div>
+						<div class="product-btn"><button class="product-btn" onclick="updateCart(<%=JSON.stringify(product)%>)"><strong>Add To Cart</Strong></button></div>
+						
+					</div>
+				</li>
+
+				<% }}) %>
+
+				
+			</ul>
+		</div>
+
+
+			<div class="container">
+				<h3 class="CategoryHeading">Feet</h3>
+				<ul class="products">
+
+				<% products.forEach(product=>{ %>
+					<%if(product.productCategoryID==6){%>
+					<li id="list-products">
+					<div class="product">
+						<img class="product-image" src="images/<%=product.productImage%>.png" alt="product Image">
+						<div class="product-name">
+							<a href="product/<%= product.productID %>"><h3><%= product.productName %></h3></a></div>
+						
+						<div class="product-price">Price :<%= product.productPrice %> </div>
+						<div class="product-btn"><button class="product-btn" onclick="updateCart(<%=JSON.stringify(product)%>)"><strong>Add To Cart</Strong></button></div>
+						
+					</div>
+				</li>
+
+				<% }}) %>
+
+				
+			</ul>
+		</div>
+
+
+
+		       <!--Contact US-->
+    <section class="contact py-5" style="background-color:#f8f9fa">
+      <div class="container">
+          <center><h2 class="section-heading">Contact Us</h2></center>
+          <form class="col-lg-6 offset-lg-3">
+              <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="email" id="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+              <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" class="form-control" placeholder="Enter name">
+              </div>
+              <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea class="form-control" id="message" placeholder="Type your message" row="5">
+                  
+              </textarea>
+              </div>
+              <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="check">
+                  <label class="form-check-label" for="check">Subscribe to newsletter</label>
+              </div>
+              <div class="text-center">
+                  <button class="btn btn-lg btn-color cont-btn">Submit</button>
+              </div>
+          </form>
+      </div>
+  </section>
+  <!--End of Contact Section-->
+
+<%- include('./_partials/footer') -%>

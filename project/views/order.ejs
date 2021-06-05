@@ -1,0 +1,32 @@
+
+
+<%- include('./_partials/header') -%>
+
+
+ <div class="container mt-5">
+ <%if(orders.length){%>
+   <table class="table table-bordered">
+  <thead>
+    <tr>
+      
+      <th scope="col">Orders</th>
+      <th scope="col">Address</th>
+      <th scope="col">Mobile No.</th>
+	  <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+  <th><%=orders[2]%></th>
+  
+   
+  </tbody>
+</table>
+<%}else{%>
+
+	<div>No Orders Found!</div>
+
+<%}%>
+   
+   </div>
+
+   <%- include('./_partials/footer') -%>
